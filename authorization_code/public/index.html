@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Music ID</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Log in Display -->
+      <div id="login">
+        <h1>Music ID</h1>
+        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+      </div>
+
+      <!-- User Profile Display After Login-->
+      <div id="loggedin">
+        <div id="user-profile">
+        </div>
+        <div id="oauth">
+        </div>
+      </div>
+    </div>
+
+    <script id="user-profile-template" type="text/x-handlebars-template">
+      <div class="media">
+        <h1>Hi, {{id}}</h1>
+        <p>Country: {{country}}</p>
+        <p>Followers: {{followers.total}}</p>
+      </div>
+    </script>
+
+    <script id="oauth-template" type="text/x-handlebars-template"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
