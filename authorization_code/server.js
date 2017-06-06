@@ -38,13 +38,16 @@ var app = express();
 app.use(express.static(__dirname + '/public'))
    .use(cookieParser());
 
+////////////////////////////////////////
+/////////////// LOGIN //////////////////
+////////////////////////////////////////
 app.get('/login', function(req, res) {
 
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
 
-  // your application requests authorization
-  var scope = 'user-read-private user-read-email';
+  // SCOPE NEEDED TO ACCESS PARTICULAR DATA //
+  var scope = 'user-top-read user-read-playback-state user-read-recently-played';
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
@@ -55,11 +58,13 @@ app.get('/login', function(req, res) {
     }));
 });
 
+////////////////////////////////////////
+/////////////// CALLBACK ///////////////
+////////////////////////////////////////
 app.get('/callback', function(req, res) {
 
   // your application requests refresh and access tokens
   // after checking the state parameter
-
   var code = req.query.code || null;
   var state = req.query.state || null;
   var storedState = req.cookies ? req.cookies[stateKey] : null;
@@ -117,6 +122,9 @@ app.get('/callback', function(req, res) {
   }
 });
 
+////////////////////////////////////////
+/////////////// TOKEN //////////////////
+////////////////////////////////////////
 app.get('/refresh_token', function(req, res) {
 
   // requesting access token from refresh token
@@ -140,6 +148,8 @@ app.get('/refresh_token', function(req, res) {
     }
   });
 });
+
+
 
 console.log('Listening on 8888');
 app.listen(8888);
