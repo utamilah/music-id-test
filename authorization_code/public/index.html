@@ -12,12 +12,19 @@
   <body>
     <div class="container">
       <!-- Log in Display -->
-      <div id="login">
-        <h1>Music ID</h1>
-        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
-      </div>
 
-    
+
+      <!-- User Profile Display After Login-->
+      <div id="loggedin">
+        <div id="user-profile">
+        </div>
+        <div id="oauth">
+        </div>
+      </div>
+    </div>
+
+    <main data-ui-view></main>
+
     <script id="user-profile-template" type="text/x-handlebars-template">
       <div class="media">
         <h1>Hi, {{id}}</h1>
