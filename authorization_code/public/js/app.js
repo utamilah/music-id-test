@@ -8,6 +8,11 @@ angular
   "$stateProvider",
   Router
 ])
+.factory("User", [
+  "$location",
+  "$resource",
+  User
+])
 .controller("LogIn", [
   "$scope",
   "$http",
@@ -18,6 +23,7 @@ angular
   "$http",
   "$stateParams",
   "$location",
+  "User",
   UserShowFunction
 ])
 
@@ -37,14 +43,25 @@ function Router($locationProvider, $stateProvider) {
   })
 }
 
+function User($location, $resource) {
+  let url_tokens = $location.$$path
+  let access_token = url_tokens.substr(url_tokens.indexOf('=') +1)
+
+  return $resource('https://api.spotify.com/v1/me', {}, {
+      get: {
+          method: 'GET',
+          headers:{'Authorization':'Bearer ' + access_token}
+      }
+  });
+}
+
 function LogInControllerFunction($scope, $http) {
   console.log('log in here')
 }
 
-function UserShowFunction($scope, $http, $stateParams, $location) {
+function UserShowFunction($scope, $http, $stateParams, $location, User) {
   let url_tokens = $location.$$path
   let access_token = url_tokens.substr(url_tokens.indexOf('=') +1)
-  console.log(access_token)
 
   let urlUser = "https://api.spotify.com/v1/me"
   $http.get(urlUser, {headers:{'Authorization':'Bearer ' + access_token}})
@@ -60,7 +77,8 @@ function UserShowFunction($scope, $http, $stateParams, $location) {
   let urlArtist = "https://api.spotify.com/v1/me/top/artists"
   $http.get(urlArtist, {headers:{'Authorization':'Bearer ' + access_token}})
   .success( function(response){
-    let artistInfo = response.items[0].name
+    this.artist = response
+    let artistInfo = artist.items[0].name
     console.log(artistInfo)
   })
 }
