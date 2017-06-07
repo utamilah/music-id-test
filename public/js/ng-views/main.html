@@ -1,58 +1,28 @@
-<!-- User Profile Display After Login-->
 <section class="wrapper">
-  <!-- <div>
-    <h2 ng-repeat="track in vm.tracks">
-      <p>{{track[0].name}}</p>
-      <p>{{track[1].name}}</p>
-      <p>{{track[2].name}}</p>
-      <p>{{track[3].name}}</p>
-      <p>{{track[4].name}}</p>
-      <p>{{track[5].name}}</p>
-      <p>{{track[6].name}}</p>
-      <p>{{track[7].name}}</p>
-      <p>{{track[8].name}}</p>
-      <p>{{track[9].name}}</p>
-      <p>{{track[10].name}}</p>
-      <p>{{track[11].name}}</p>
-      <p>{{track[12].name}}</p>
-      <p>{{track[13].name}}</p>
-      <p>{{track[14].name}}</p>
-      <p>{{track[15].name}}</p>
-      <p>{{track[16].name}}</p>
-      <p>{{track[17].name}}</p>
-      <p>{{track[18].name}}</p>
-      <p>{{track[19].name}}</p>
-      <p>{{track[20].name}}</p>
-    </h2>
-  </div> -->
-
-  <ol>
-    <li>{{vm.artists.items[0].name}}</li>
-    <li>{{vm.artists.items[1].name}}</li>
-    <li>{{vm.artists.items[2].name}}</li>
-    <li>{{vm.artists.items[3].name}}</li>
-    <li>{{vm.artists.items[4].name}}</li>
-    --------
-  </ol>
-
-  <ol>
-    <li>{{vm.tracks.items[0].name}}</li>
-    <li>{{vm.tracks.items[1].name}}</li>
-    <li>{{vm.tracks.items[2].name}}</li>
-    <li>{{vm.tracks.items[3].name}}</li>
-    <li>{{vm.tracks.items[4].name}}</li>
-    --------
-  </ol>
-
-  <div class="top-artist">
-    <p>Your Top Artist Is...</p>
-    <h2>{{vm.artists.items[0].name}}</h2>
+  <div class="user-info">
+    <h2>Hi, {{vm.user.id}}</h2>
+    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus. Cras mattis consectetur purus sit amet fermentum.</p>
+    <div class="user-data">
+      <h5>Country</h5>
+      <p>{{vm.user.country}}</p>
+      <h5>Followers</h5>
+      <p>{{vm.user.followers.total}}</p>
+    </div>
   </div>
-    --------
-  <div class="top-track">
-    <p>The Track You’ve Listened To The Most is….</p>
-    <h2>{{vm.tracks.items[0].name}}</h2>
-    <p>by {{vm.tracks.items[0].artists[0].name}}</p>
+  <div class="top-list">
+    <h4>Your top 5 artists</h4>
+    <ol>
+      <li ng-repeat="artist in vm.artists">
+        {{artist.name}}
+      </li>
+    </ol>
   </div>
-    --------
+  <div class="top-list">
+    <h4>Your top 5 tracks</h4>
+    <ol>
+      <li ng-repeat="track in vm.tracks">
+        {{track.name}}
+      </li>
+    </ol>
+  </div>
 </section>
