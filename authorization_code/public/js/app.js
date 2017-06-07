@@ -47,14 +47,20 @@ function UserShowFunction($scope, $http, $stateParams, $location) {
   console.log(access_token)
 
   let urlUser = "https://api.spotify.com/v1/me"
-  this.user = $http.get(urlUser, {headers:{'Authorization':'Bearer ' + access_token}})
+  $http.get(urlUser, {headers:{'Authorization':'Bearer ' + access_token}})
   .success( function(response){
-    let userInfo = {
-      id: response.id,
-      country: response.country,
-      followers: response.followers.total,
-      image: response.images.url
-    }
+    let userInfo = [
+      response.id,
+      response.country,
+      response.followers.total
+    ]
     console.log(userInfo)
+  })
+
+  let urlArtist = "https://api.spotify.com/v1/me/top/artists"
+  $http.get(urlArtist, {headers:{'Authorization':'Bearer ' + access_token}})
+  .success( function(response){
+    let artistInfo = response.items[0].name
+    console.log(artistInfo)
   })
 }
