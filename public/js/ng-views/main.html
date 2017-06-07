@@ -1,6 +1,6 @@
 <!-- User Profile Display After Login-->
 <section class="wrapper">
-  <div>
+  <!-- <div>
     <h2 ng-repeat="track in vm.tracks">
       <p>{{track[0].name}}</p>
       <p>{{track[1].name}}</p>
@@ -24,5 +24,35 @@
       <p>{{track[19].name}}</p>
       <p>{{track[20].name}}</p>
     </h2>
+  </div> -->
+
+  <ol>
+    <li>{{vm.artists.items[0].name}}</li>
+    <li>{{vm.artists.items[1].name}}</li>
+    <li>{{vm.artists.items[2].name}}</li>
+    <li>{{vm.artists.items[3].name}}</li>
+    <li>{{vm.artists.items[4].name}}</li>
+    --------
+  </ol>
+
+  <ol>
+    <li>{{vm.tracks.items[0].name}}</li>
+    <li>{{vm.tracks.items[1].name}}</li>
+    <li>{{vm.tracks.items[2].name}}</li>
+    <li>{{vm.tracks.items[3].name}}</li>
+    <li>{{vm.tracks.items[4].name}}</li>
+    --------
+  </ol>
+
+  <div class="top-artist">
+    <p>Your Top Artist Is...</p>
+    <h2>{{vm.artists.items[0].name}}</h2>
   </div>
+    --------
+  <div class="top-track">
+    <p>The Track You’ve Listened To The Most is….</p>
+    <h2>{{vm.tracks.items[0].name}}</h2>
+    <p>by {{vm.tracks.items[0].artists[0].name}}</p>
+  </div>
+    --------
 </section>
