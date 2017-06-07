@@ -69,25 +69,28 @@ function UserShowFunction($scope, $http, $stateParams, $location, User) {
   console.log(access_token)
 
   let urlUser = "https://api.spotify.com/v1/me"
+
+
   $http.get(urlUser, {headers:{'Authorization':'Bearer ' + access_token}})
   .success( function(response){
-    let userInfo = [
-      response.id,
-      response.country,
-      response.followers.total
-    ]
-    console.log(userInfo)
+    self.user = response
   })
 
   let urlArtist = "https://api.spotify.com/v1/me/top/artists"
   $http.get(urlArtist, {headers:{'Authorization':'Bearer ' + access_token}})
   .success( function(response){
-    self.artists = response
+    self.artists = response.items
+    let artistArray = self.artists
+
+    if (artistArray.length > 5) artistArray.length = 5;
   })
 
   let urlTracks = "https://api.spotify.com/v1/me/top/tracks"
   $http.get(urlTracks, {headers:{'Authorization':'Bearer ' + access_token}})
   .success( function(response){
-    self.tracks = response
+    self.tracks = response.items
+    let trackArray = self.tracks
+
+    if (trackArray.length > 5) trackArray.length = 5;
   })
 }
