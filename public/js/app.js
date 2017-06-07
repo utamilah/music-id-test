@@ -93,4 +93,18 @@ function UserShowFunction($scope, $http, $stateParams, $location, User) {
 
     if (trackArray.length > 5) trackArray.length = 5;
   })
+
+  let allTracks = "https://api.spotify.com/v1/me/tracks"
+  $http.get(allTracks, {headers:{'Authorization':'Bearer ' + access_token}})
+  .success(function(response){
+    self.track = response
+    console.log(self.track)
+  })
+
+  let recentTracks = "https://api.spotify.com/v1/me/player/recently-played"
+  $http.get(recentTracks, {headers:{'Authorization':'Bearer ' + access_token}})
+  .success(function(response){
+    self.recent = response
+    console.log(self.recent)
+  })
 }

@@ -1,28 +1,57 @@
 <section class="wrapper">
-  <div class="user-info">
-    <h2>Hi, {{vm.user.id}}</h2>
-    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus. Cras mattis consectetur purus sit amet fermentum.</p>
-    <div class="user-data">
-      <h5>Country</h5>
-      <p>{{vm.user.country}}</p>
-      <h5>Followers</h5>
-      <p>{{vm.user.followers.total}}</p>
+  <div class="column-left">
+    <div class="user-info">
+      <h2>Hi, {{vm.user.id}}</h2>
+      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus. Cras mattis consectetur purus sit amet fermentum.</p>
+      <div class="user-data">
+        <div class="user-info-box">
+          <h5>Country</h5>
+          <p>{{vm.user.country}}</p>
+        </div>
+        <div class="user-info-box">
+          <h5>Followers</h5>
+          <p>{{vm.user.followers.total}}</p>
+        </div>
+        <div class="user-info-box">
+          <h5>Saved Tracks</h5>
+          <p>{{vm.track.total}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="top-list">
+      <h4>Your top 5 artists</h4>
+      <ol>
+        <li ng-repeat="artist in vm.artists">
+          {{artist.name}}
+        </li>
+      </ol>
+    </div>
+    <div class="top-list">
+      <h4>Your top 5 tracks</h4>
+      <ol>
+        <li ng-repeat="track in vm.tracks">
+          {{track.name}} by {{track.artists[0].name}}
+        </li>
+      </ol>
     </div>
   </div>
-  <div class="top-list">
-    <h4>Your top 5 artists</h4>
-    <ol>
-      <li ng-repeat="artist in vm.artists">
-        {{artist.name}}
-      </li>
-    </ol>
+
+  <div class="column-right">
+    <div class="top-artist">
+      <h5>Your Top Artist is…</h5>
+      <p>{{vm.artists[0].name}}</p>
+    </div>
+    <div class="top-track">
+      <h5>The Track You’ve Listened To The Most is…</h5>
+      <p>{{vm.tracks[0].name}}</p>
+      <p class="by">by {{vm.tracks[0].artists[0].name}}</p>
+    </div>
+    <div class="recent-album">
+      <h5>Your Most Recent Album…</h5>
+      <p>{{vm.recent.items[0].track.album.name}}</p>
+      <p class="by">by {{vm.recent.items[0].track.artists[0].name}}</p>
+    </div>
   </div>
-  <div class="top-list">
-    <h4>Your top 5 tracks</h4>
-    <ol>
-      <li ng-repeat="track in vm.tracks">
-        {{track.name}}
-      </li>
-    </ol>
-  </div>
+
+
 </section>
