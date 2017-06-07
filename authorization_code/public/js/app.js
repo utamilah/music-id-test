@@ -8,10 +8,6 @@ angular
   "$stateProvider",
   Router
 ])
-.factory("UserShowFactory", [
-  "$resource",
-  UserShowFactoryFunction
-])
 .controller("LogIn", [
   "$scope",
   "$http",
@@ -20,7 +16,8 @@ angular
 .controller("UserShow", [
   "$scope",
   "$http",
-  "UserShowFactory",
+  "$stateParams",
+  "$location",
   UserShowFunction
 ])
 
@@ -33,7 +30,7 @@ function Router($locationProvider, $stateProvider) {
     controllerAs: "vm"
   })
   .state("usershow", {
-    url: "/access_token=:access_token",
+    url: "/access_token=:access_token&refresh_token=:refresh_token",
     templateUrl: "js/ng-views/main.html",
     controller: "UserShow",
     controllerAs: "vm"
@@ -44,10 +41,20 @@ function LogInControllerFunction($scope, $http) {
   console.log('log in here')
 }
 
-function UserShowFactoryFunction($resource) {
-  return $resource("https://api.spotify.com/v1/me/top/artists/:id")
-}
+function UserShowFunction($scope, $http, $stateParams, $location) {
+  let url_tokens = $location.$$path
+  let access_token = url_tokens.substr(url_tokens.indexOf('=') +1)
+  console.log(access_token)
 
-function UserShowFunction($scope, $http, UserShowFactory) {
-  console.log('logged in')
+  let urlUser = "https://api.spotify.com/v1/me"
+  this.user = $http.get(urlUser, {headers:{'Authorization':'Bearer ' + access_token}})
+  .success( function(response){
+    let userInfo = {
+      id: response.id,
+      country: response.country,
+      followers: response.followers.total,
+      image: response.images.url
+    }
+    console.log(userInfo)
+  })
 }
