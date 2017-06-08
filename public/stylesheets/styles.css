@@ -2,3 +2,84 @@ body {
   background: #000;
   color: #fff;
 }
+
+/*font-family: 'Roboto Mono', monospace;
+font-family: 'Poppins', sans-serif;*/
+.wrapper {
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+}
+
+.wrapper h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 24px;
+}
+
+.column-left .user-info {
+  font-family: 'Poppins', sans-serif;
+}
+
+.user-info .about {
+  font-family: 'Roboto Mono', monospace;
+  color: #FFFFFF;
+  letter-spacing: 0.59px;
+  margin-bottom: 50px;
+}
+
+.column-left {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.top-list {
+  font-family: 'Poppins', sans-serif;
+}
+
+.top-list span {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.top-list li:before {
+  background: #FF12A1;
+  height: 10px;
+  width: 10px;
+}
+
+.column-right {
+  font-family: 'Poppins', sans-serif;
+}
+
+.column-right, .column-left {
+  width: 50%;
+  padding: 1%;
+}
+
+.column-right .by {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.user-data {
+  display: flex;
+}
+
+.user-data .user-info-box {
+  width: 140px;
+  background: #232323;
+  margin-right: 3px;
+  text-align: center;
+}
+
+.user-data h5 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.user-data p {
+  font-size: 36px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 22px;
+  margin-top: 5px;
+  letter-spacing: 0.89px;
+  text-shadow: 2px 3px 0 #4100CD;
+}
