@@ -2,7 +2,7 @@
   <div class="column-left">
     <div class="user-info">
       <h2>Hi, {{vm.user.id}}</h2>
-      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus. Cras mattis consectetur purus sit amet fermentum.</p>
+      <p class="about">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
       <div class="user-data">
         <div class="user-info-box">
           <h5>Country</h5>
@@ -30,7 +30,7 @@
       <h4>Your top 5 tracks</h4>
       <ol>
         <li ng-repeat="track in vm.tracks">
-          {{track.name}} by {{track.artists[0].name}}
+          {{track.name}} <span>by {{track.artists[0].name}}</span>
         </li>
       </ol>
     </div>
