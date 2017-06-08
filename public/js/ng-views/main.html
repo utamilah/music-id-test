@@ -1,6 +1,9 @@
-<section class="wrapper">
+<header class="title-section">
   <h1>Music ID</h1>
-</section>
+  <div class="exit-button">
+    <a href="#">Log Out</a>
+  </div>
+</header>
 
 <section class="wrapper">
   <div class="column-left">
@@ -58,16 +61,18 @@
         </div>
       </div>
     </div>
-    <div class="top-track">
-      <h5>The Track You’ve Listened To The Most is…</h5>
-      <p>{{vm.tracks[0].name}}</p>
-      <p class="by">by {{vm.tracks[0].artists[0].name}}</p>
-      <img src="{{vm.items.images.url}}" alt="">
-    </div>
-    <div class="recent-album">
-      <h5>Your Most Recent Album…</h5>
-      <p>{{vm.recent.items[0].track.album.name}}</p>
-      <p class="by">by {{vm.recent.items[0].track.artists[0].name}}</p>
+    <div class="additional">
+      <div class="top-track">
+        <h5>The Track You’ve Listened To The Most is…</h5>
+        <p>{{vm.tracks[0].name}}</p>
+        <p class="by">by {{vm.tracks[0].artists[0].name}}</p>
+        <img src="{{vm.items[0].images.url}}" alt="">
+      </div>
+      <div class="recent-album">
+        <h5>Your Most Recent Album…</h5>
+        <p>{{vm.recent.items[0].track.album.name}}</p>
+        <p class="by">by {{vm.recent.items[0].track.artists[0].name}}</p>
+      </div>
     </div>
   </div>
 
