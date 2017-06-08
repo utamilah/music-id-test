@@ -1,8 +1,12 @@
 <section class="wrapper">
+  <h1>Music ID</h1>
+</section>
+
+<section class="wrapper">
   <div class="column-left">
     <div class="user-info">
       <h2>Hi, {{vm.user.id}}</h2>
-      <p class="about">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <p class="about">Check out your potentially embarrassing top 5 artists and songs in one place!</p>
       <div class="user-data">
         <div class="user-info-box">
           <h5>Country</h5>
@@ -18,33 +22,47 @@
         </div>
       </div>
     </div>
-    <div class="top-list">
-      <h4>Your top 5 artists</h4>
-      <ol>
-        <li ng-repeat="artist in vm.artists">
-          {{artist.name}}
-        </li>
-      </ol>
-    </div>
-    <div class="top-list">
-      <h4>Your top 5 tracks</h4>
-      <ol>
-        <li ng-repeat="track in vm.tracks">
-          {{track.name}} <span>by {{track.artists[0].name}}</span>
-        </li>
-      </ol>
+    <div class="top-fives">
+      <div class="top-list">
+        <h4>Your top 5 artists</h4>
+        <ol>
+          <li ng-repeat="artist in vm.artists">
+            {{artist.name}}
+          </li>
+        </ol>
+      </div>
+      <div class="top-list">
+        <h4>Your top 5 tracks</h4>
+        <ol>
+          <li ng-repeat="track in vm.tracks">
+            {{track.name}} <span>by {{track.artists[0].name}}</span>
+          </li>
+        </ol>
+      </div>
     </div>
   </div>
 
   <div class="column-right">
     <div class="top-artist">
       <h5>Your Top Artist is…</h5>
-      <p>{{vm.artists[0].name}}</p>
+      <div class="top-artist-details">
+        <p class="name">{{vm.artists[0].name}}</p>
+        <div class="genres">
+          <p>Genres:</p>
+          <li ng-repeat="genres in vm.artists[0].genres">
+            {{genres}}
+          </li>
+        </div>
+        <div class="artist-link">
+          <a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
     </div>
     <div class="top-track">
       <h5>The Track You’ve Listened To The Most is…</h5>
       <p>{{vm.tracks[0].name}}</p>
       <p class="by">by {{vm.tracks[0].artists[0].name}}</p>
+      <img src="{{vm.items.images.url}}" alt="">
     </div>
     <div class="recent-album">
       <h5>Your Most Recent Album…</h5>

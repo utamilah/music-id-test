@@ -7,13 +7,71 @@ body {
 font-family: 'Poppins', sans-serif;*/
 .wrapper {
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
   display: flex;
 }
 
 .wrapper h1 {
   font-family: 'Roboto Mono', monospace;
   font-size: 24px;
+}
+
+.top-artist-details {
+  background: #232323;
+  padding: 20px;
+}
+
+.top-artist-details .genres p {
+  font-family: 'Poppins', sans-serif;
+}
+
+.top-artist-details .genres li {
+  text-decoration: none;
+  display: inline;
+}
+
+.top-artist-details .name {
+  font-size: 40px;
+  color: #FFFFFF;
+  letter-spacing: 1.33px;
+  text-shadow: 3px 3px 0 #4100CD;
+}
+
+.top-artist-details .genres {
+  font-family: 'Roboto Mono', monospace;
+  color: #4100CD;
+  background: #57E5C1;
+  box-shadow: 3px 3px 0 0 #FF12A1;
+  width: auto;
+}
+
+.top-artist-details .genres p {
+  display: inline;
+}
+
+.top-artist-details .genres li:not(:last-child):after {
+  content: ','
+}
+
+.artist-link {
+  height: 60px;
+  width: 60px;
+  background: #FF12A1;
+  border-radius: 100%;
+  margin-bottom: -50px;
+  margin-top: 30px;
+}
+
+.artist-link a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+}
+
+.artist-link i {
+  margin: 20px 10px 10px 14px;
 }
 
 .column-left .user-info {
@@ -25,10 +83,38 @@ font-family: 'Poppins', sans-serif;*/
   color: #FFFFFF;
   letter-spacing: 0.59px;
   margin-bottom: 50px;
+  width: 400px;
+  letter-spacing: 0.59px;
+  line-height: 30px;
 }
 
 .column-left {
   font-family: 'Roboto Mono', monospace;
+  margin-left: 20px;
+  background: #0000ff
+}
+
+.column-right {
+  background: #ff0000
+}
+
+.column-right h5 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.top-artist-details .name {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.top-fives {
+  margin-top: 50px;
+}
+
+.top-fives h4 {
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
 .top-list {
@@ -39,10 +125,28 @@ font-family: 'Poppins', sans-serif;*/
   font-family: 'Roboto Mono', monospace;
 }
 
-.top-list li:before {
-  background: #FF12A1;
-  height: 10px;
-  width: 10px;
+.top-list ol {
+  margin: 0;
+ padding: 0;
+ list-style-type: none;
+}
+
+.top-list ol li::before {
+  content: counter(step-counter);
+  margin-right: 5px;
+  font-size: 80%;
+  background-color: #FF12A1;
+  color: white;
+  font-weight: bold;
+  padding: 9px 16px 9px 16px;
+  border-radius: 100%;
+}
+
+.top-list ol li {
+  counter-increment: step-counter;
+  margin-bottom: 10px;
+  line-height: 40px;
+  font-size: 20px;
 }
 
 .column-right {
@@ -50,7 +154,7 @@ font-family: 'Poppins', sans-serif;*/
 }
 
 .column-right, .column-left {
-  width: 50%;
+  width: 40%;
   padding: 1%;
 }
 
@@ -82,4 +186,8 @@ font-family: 'Poppins', sans-serif;*/
   margin-top: 5px;
   letter-spacing: 0.89px;
   text-shadow: 2px 3px 0 #4100CD;
+}
+
+.top-artist-details span {
+  font-family: 'Poppins', sans-serif;
 }
