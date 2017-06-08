@@ -17,9 +17,38 @@ font-family: 'Poppins', sans-serif;*/
   font-size: 24px;
 }
 
+.title-section {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.exit-button a {
+  color: #fff;
+  background: #49CC4C;
+  border-radius: 50%;
+  padding: 10px 30px 10px 30px;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: background-color 0.5s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.exit-button a:hover {
+  background: #359837;
+}
+
 .top-artist-details {
   background: #232323;
   padding: 20px;
+}
+
+.top-artist-details .genres {
+  display: inline;
+  padding: 5px 10px 5px 10px;
 }
 
 .top-artist-details .genres p {
@@ -79,6 +108,20 @@ font-family: 'Poppins', sans-serif;*/
   margin-top: 70px;
 }
 
+.ghost-img {
+  width: 70%;
+  text-align: right;
+  margin-left: auto;
+  margin-top: -80px;
+}
+
+.ghost-img img {
+  width: 100%;
+  opacity: 0.5;
+  position: relative;
+  z-index: -1;
+}
+
 .column-left .user-info {
   font-family: 'Poppins', sans-serif;
 }
@@ -105,6 +148,7 @@ font-family: 'Poppins', sans-serif;*/
 .column-right h5 {
   text-transform: uppercase;
   margin-bottom: 10px;
+  margin-top: 50px;
 }
 
 .top-artist-details .name {
@@ -123,6 +167,7 @@ font-family: 'Poppins', sans-serif;*/
 
 .top-list {
   font-family: 'Poppins', sans-serif;
+  margin-bottom: 50px;
 }
 
 .top-list span {
@@ -151,6 +196,37 @@ font-family: 'Poppins', sans-serif;*/
   margin-bottom: 10px;
   line-height: 40px;
   font-size: 20px;
+}
+
+.additional .name {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  letter-spacing: 1.33px;
+  text-shadow: 3px 3px 0 #4100CD;
+}
+
+.additional .by {
+  font-family: 'Roboto Mono', monospace;
+  background: #57E5C1;
+  padding: 5px 10px 5px 10px;
+  display: inline;
+  box-shadow: 3px 3px 0 0 #FF12A1;
+  color: #4100CD;
+}
+
+.additional .by span {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 90px;
+}
+
+.additional .when {
+  font-family: Poppins-Bold;
+  font-size: 24px;
+  color: #FFFFFF;
+  letter-spacing: 0.59px;
+  text-shadow: 2px 3px 0 #4100CD;
+  margin-top: 10px;
 }
 
 .column-right {

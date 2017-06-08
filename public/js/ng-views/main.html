@@ -1,7 +1,7 @@
 <header class="title-section">
   <h1>Music ID</h1>
   <div class="exit-button">
-    <a href="#">Log Out</a>
+    <a href="#/">Log Out</a>
   </div>
 </header>
 
@@ -57,21 +57,28 @@
           </li>
         </div>
         <div class="artist-link">
-          <a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+          <a href="{{vm.artists[0].external_urls.spotify}}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
     <div class="additional">
       <div class="top-track">
         <h5>The Track You’ve Listened To The Most is…</h5>
-        <p>{{vm.tracks[0].name}}</p>
-        <p class="by">by {{vm.tracks[0].artists[0].name}}</p>
-        <img src="{{vm.items[0].images.url}}" alt="">
+        <p class="name">{{vm.tracks[0].name}}</p>
+        <p class="by"><span>By:</span> {{vm.tracks[0].artists[0].name}}</p>
+        <div class="ghost-img">
+          <img src="{{vm.tracks[0].album.images[0].url}}" alt="">
+        </div>
       </div>
       <div class="recent-album">
         <h5>Your Most Recent Album…</h5>
-        <p>{{vm.recent.items[0].track.album.name}}</p>
-        <p class="by">by {{vm.recent.items[0].track.artists[0].name}}</p>
+        <p class="name">{{vm.recent.items[0].track.album.name}}</p>
+        <p class="by"><span>By:</span> {{vm.recent.items[0].track.artists[0].name}}</p>
+        <h5>When?</h5>
+        <p class="when">{{vm.recent.items[0].played_at}}</p>
+        <div class="ghost-img">
+          <img src="{{vm.recent.items[0].track.album.images[0].url}}" alt="">
+        </div>
       </div>
     </div>
   </div>
