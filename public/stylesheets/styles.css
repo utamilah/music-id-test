@@ -1,3 +1,9 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  transition: all 250ms ease-in-out;
+}
+
 body {
   background: #000;
   color: #fff;
@@ -5,6 +11,33 @@ body {
 
 /*font-family: 'Roboto Mono', monospace;
 font-family: 'Poppins', sans-serif;*/
+.login {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+
+.login h1 {
+  font-family: 'Roboto Mono', monospace;
+  margin-bottom: 50px;
+}
+
+.login a {
+  color: #fff;
+  background: #49CC4C;
+  padding: 10px 30px 10px 30px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 100px;
+}
+
+.user-greet {
+  margin-right: 90px;
+}
+
 .wrapper {
   margin: 30px auto 50px;
   width: 90%;
@@ -29,7 +62,6 @@ font-family: 'Poppins', sans-serif;*/
 .exit-button a {
   color: #fff;
   background: #49CC4C;
-  border-radius: 50%;
   padding: 10px 30px 10px 30px;
   text-decoration: none;
   border-radius: 100px;
@@ -131,7 +163,7 @@ font-family: 'Poppins', sans-serif;*/
   color: #FFFFFF;
   letter-spacing: 0.59px;
   margin-bottom: 50px;
-  width: 400px;
+  width: 100%;
   letter-spacing: 0.59px;
   line-height: 30px;
 }
@@ -283,4 +315,63 @@ font-family: 'Poppins', sans-serif;*/
 .footer-info a {
   color: #FF12A1;
   text-decoration: none;
+}
+
+@media only screen and (max-width : 1045px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .column-left, .column-right {
+    width: 100%;
+  }
+
+  .top-fives {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .top-list {
+    margin-right: 50px;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .user-greet {
+    margin-right: 50px;
+  }
+
+
+  .ghost-img img {
+    width: 50%;
+    opacity: 0.5;
+    position: relative;
+    z-index: -1;
+  }
+}
+
+@media only screen and (max-width : 930px) {
+  .wrapper, .title-section, .footer-info {
+    width: 80%;
+  }
+
+  .user-info, .top-fives, .user-data {
+    flex-direction: column;
+  }
+
+  .user-data .user-info-box {
+    margin-bottom: 5px;
+  }
+
+  .top-list {
+    width: 100%;
+  }
+
+  .genres {
+    line-height: 40px;
+  }
 }
