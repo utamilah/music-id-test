@@ -1,5 +1,26 @@
-# music-id
+# **Music ID**
 App using Spotify's API
+
+![screengrab](http://i.imgur.com/u84JJ8g.png)
+
+### Technologies
+Music ID uses [Spotify's API](https://developer.spotify.com/web-api/) and it's [Authorization Code Flow](https://developer.spotify.com/web-api/authorization-guide/#authorization-code-flow).
+This app was built with express and angular.
+
+### Installation Instructions
+Clone down [this]() repository and use `npm install` in your CLI. Run `node server.js` and log in with your Spotify information.
+
+
+### Wireframe
+![wireframe](http://i.imgur.com/KbR9iIr.png)
+
+For this application, I wanted it to look fun and "poppy" so I used neon colors on a black background for that effect.
+
+### Hurdles
+* Working with the API was pretty difficult in the beginning
+* Could not get the audio to work
+* Styling was an issue with a number of expressions all around the HTML
+
 
 ## User Stories
 ### MVP / Bronze
