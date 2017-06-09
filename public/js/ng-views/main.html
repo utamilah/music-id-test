@@ -4,12 +4,18 @@
     <a href="#/">Log Out</a>
   </div>
 </header>
+<!--
+<audio id="audio" controls autoplay options="track" data-ng-init="getAudio()">
+  <source id="mp4_src" src="{{trustSrc(track.src)}}">
+</audio>
+
+<p>{{trustSrc(track.src)}}</p> -->
 
 <section class="wrapper">
   <div class="column-left">
     <div class="user-info">
       <div class="user-greet">
-        <h2>Hi, {{vm.user.id}}</h2>
+        <h2>Spotify Favorites in One Place</h2>
         <p class="about">Check out your potentially embarrassing top 5 artists and songs in one place!</p>
       </div>
       <div class="user-data">
@@ -58,7 +64,7 @@
             {{genres}}
           </li>
         </div>
-        <div class="artist-link">
+        <div class="artist-link" class="hvr-buzz">
           <a target="_blank" href="{{vm.artists[0].external_urls.spotify}}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
         </div>
       </div>

@@ -303,6 +303,10 @@ font-family: 'Poppins', sans-serif;*/
   font-family: 'Poppins', sans-serif;
 }
 
+.genres {
+  line-height: 40px;
+}
+
 .footer-info {
   margin: 0 auto;
   width: 90%;
@@ -369,9 +373,5 @@ font-family: 'Poppins', sans-serif;*/
 
   .top-list {
     width: 100%;
-  }
-
-  .genres {
-    line-height: 40px;
   }
 }

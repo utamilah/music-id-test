@@ -23,6 +23,7 @@ angular
   "$http",
   "$stateParams",
   "$location",
+  "$sce",
   "User",
   UserShowFunction
 ])
@@ -61,7 +62,7 @@ function LogInControllerFunction($scope, $http) {
   console.log('log in here')
 }
 
-function UserShowFunction($scope, $http, $stateParams, $location, User) {
+function UserShowFunction($scope, $http, $stateParams, $location, $sce, User) {
   let url_tokens = $location.$$path
   let access_token = url_tokens.substr(url_tokens.indexOf('=') + 1)
 
@@ -83,6 +84,7 @@ function UserShowFunction($scope, $http, $stateParams, $location, User) {
     let artistArray = self.artists
 
     if (artistArray.length > 5) artistArray.length = 5;
+
   })
 
   let urlTracks = "https://api.spotify.com/v1/me/top/tracks"
@@ -92,19 +94,31 @@ function UserShowFunction($scope, $http, $stateParams, $location, User) {
     let trackArray = self.tracks
 
     if (trackArray.length > 5) trackArray.length = 5;
+
+    $scope.trustSrc = function(src) {
+       return $sce.trustAsResourceUrl(self.tracks[0].preview_url);
+     }
+
+     $scope.track = {src: self.tracks[0].preview_url}
+
+     console.log($scope.track.src)
+
+    // $scope.getAutdio = function(src) {
+    //   document.getElementById("mp4_src").src = $scope.track.src;
+    //   document.getElementById("audio").load();
+    // }
   })
 
   let allTracks = "https://api.spotify.com/v1/me/tracks"
   $http.get(allTracks, {headers:{'Authorization':'Bearer ' + access_token}})
   .success(function(response){
     self.track = response
-    console.log(self.track)
+
   })
 
   let recentTracks = "https://api.spotify.com/v1/me/player/recently-played"
   $http.get(recentTracks, {headers:{'Authorization':'Bearer ' + access_token}})
   .success(function(response){
     self.recent = response
-    console.log(self.recent)
   })
 }
