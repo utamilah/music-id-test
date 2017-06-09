@@ -47,7 +47,7 @@ app.get('/login', function(req, res) {
   res.cookie(stateKey, state);
 
   // SCOPE NEEDED TO ACCESS PARTICULAR DATA //
-  var scope = 'user-top-read user-read-playback-state user-read-recently-played user-library-read';
+  var scope = 'user-top-read user-read-playback-state user-read-recently-played ';
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
@@ -148,3 +148,8 @@ app.get('/refresh_token', function(req, res) {
     }
   });
 });
+
+
+
+console.log('Listening on 8888');
+app.listen(8888);
