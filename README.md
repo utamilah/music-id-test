@@ -8,7 +8,7 @@ Music ID uses [Spotify's API](https://developer.spotify.com/web-api/) and it's [
 This app was built with express and angular.
 
 ### Installation Instructions
-Clone down [this]() repository and use `npm install` in your CLI. Run `node server.js` and log in with your Spotify information.
+Clone down [this](https://github.com/utamilah/music-id-test) repository and use `npm install` in your CLI. Run `node server.js` and log in with your Spotify information.
 
 
 ### Wireframe
