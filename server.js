@@ -12,8 +12,8 @@ var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-var client_id = 'CLIENT_ID'; // Your client id
-var client_secret = 'CLIENT_SECRET'; // Your secret
+var client_id = 'bd76ebcc02f2457c8d85f6de9579210d'; // Your client id
+var client_secret = '53a45c47d41b4398a4fa2bc4ea8d39b3'; // Your secret
 var redirect_uri = 'https://music-id.herokuapp.com/callback'; // Your redirect uri
 
 /**
