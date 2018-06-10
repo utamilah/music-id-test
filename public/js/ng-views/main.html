@@ -76,11 +76,11 @@
         </div>
       </div>
       <div class="recent-album">
-        <h5>Your Most Recent Album…</h5>
-        <p class="name">{{vm.recent.items[0].track.album.name}}</p>
+        <h5>Your Most Recent Song…</h5>
+        <p class="name">{{vm.recent.items[0].track.name}}</p>
         <p class="by"><span>By:</span> {{vm.recent.items[0].track.artists[0].name}}</p>
         <h5>When?</h5>
-        <p class="when">{{vm.recent.items[0].played_at}}</p>
+        <p ng-bind="date | date:'MM/dd/yyyy'" class="when">{{vm.recent.items[0].played_at}}</p>
         <div class="ghost-img">
           <img src="{{vm.recent.items[0].track.album.images[0].url}}" alt="">
         </div>
