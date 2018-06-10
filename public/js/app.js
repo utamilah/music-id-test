@@ -113,5 +113,6 @@ function UserShowFunction($scope, $http, $stateParams, $location, $sce, User) {
   $http.get(recentTracks, {headers:{'Authorization':'Bearer ' + access_token}})
   .success(function(response){
     self.recent = response
+    $scope.date = response.items[0].played_at
   })
 }
