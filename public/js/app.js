@@ -56,6 +56,9 @@ function User($location, $resource) {
   });
 }
 
+function LogInControllerFunction($scope, $http) {
+}
+
 function UserShowFunction($scope, $http, $stateParams, $location, $sce, User) {
   let url_tokens = $location.$$path
   let access_token = url_tokens.substr(url_tokens.indexOf('=') + 1)
