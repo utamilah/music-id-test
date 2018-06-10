@@ -54,12 +54,6 @@ function User($location, $resource) {
           headers:{'Authorization':'Bearer ' + access_token}
       }
   });
-
-  console.log()
-}
-
-function LogInControllerFunction($scope, $http) {
-  console.log('log in here')
 }
 
 function UserShowFunction($scope, $http, $stateParams, $location, $sce, User) {
@@ -67,7 +61,6 @@ function UserShowFunction($scope, $http, $stateParams, $location, $sce, User) {
   let access_token = url_tokens.substr(url_tokens.indexOf('=') + 1)
 
   let self = this
-  console.log(access_token)
 
   let urlUser = "https://api.spotify.com/v1/me"
 
@@ -100,9 +93,6 @@ function UserShowFunction($scope, $http, $stateParams, $location, $sce, User) {
      }
 
      $scope.track = {src: self.tracks[0].preview_url}
-
-     console.log($scope.track.src)
-
     // $scope.getAutdio = function(src) {
     //   document.getElementById("mp4_src").src = $scope.track.src;
     //   document.getElementById("audio").load();
