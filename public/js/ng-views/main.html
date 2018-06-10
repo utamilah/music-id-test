@@ -80,7 +80,7 @@
         <p class="name">{{vm.recent.items[0].track.name}}</p>
         <p class="by"><span>By:</span> {{vm.recent.items[0].track.artists[0].name}}</p>
         <h5>When?</h5>
-        <p ng-bind="date | date:'MM/dd/yyyy'" class="when">{{vm.recent.items[0].played_at}}</p>
+        <p ng-bind="date | date:'MM/dd/yyyy h:mma'" class="when">{{vm.recent.items[0].played_at}}</p>
         <div class="ghost-img">
           <img src="{{vm.recent.items[0].track.album.images[0].url}}" alt="">
         </div>
