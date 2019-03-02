@@ -102,12 +102,12 @@ function UserShowFunction($scope, $http, $stateParams, $location, $sce, User) {
     // }
   })
 
-  let allTracks = "https://api.spotify.com/v1/me/tracks"
-  $http.get(allTracks, {headers:{'Authorization':'Bearer ' + access_token}})
-  .success(function(response){
-    self.track = response
-
-  })
+  // let allTracks = "https://api.spotify.com/v1/me/tracks"
+  // $http.get(allTracks, {headers:{'Authorization':'Bearer ' + access_token}})
+  // .success(function(response){
+  //   self.track = response
+  //
+  // })
 
   let recentTracks = "https://api.spotify.com/v1/me/player/recently-played"
   $http.get(recentTracks, {headers:{'Authorization':'Bearer ' + access_token}})
